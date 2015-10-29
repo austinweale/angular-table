@@ -15,7 +15,7 @@
 
 		<!-- Add attributes (angular directives) to this div 
 			to instantiate your application and set the controller -->
-		<div class="container">
+		<div class="container" ng-app="sortApp" ng-controller="mainController">
 
 			<h1>Who is UW paying the most?</h1>			
 			<form>
@@ -28,10 +28,10 @@
 				<div class="alert">
 
 					<!-- Add an expression to show your sortType variable -->
-					<p><strong>Sort by:</strong></p>
+					<p><strong>Sort by:</strong> {{sortType}}</p>
 
 					<!-- Add an expression to show your search variable -->
-					<p><strong>Search String:</strong></p>
+					<p ng-bind="search"><strong>Search String:</strong></p>
 
 				</div>
 			</form>
@@ -42,15 +42,15 @@
 						<td>
 
 							<!-- Add an ng-click event to set the variable sortType equal to 'name' -->
-							<a href="#">Name</a>
+							<a href="#" ng-click="sortType = 'Name'">Name</a>
 						</td>
 						<td>
 							<!-- Add an ng-click event to set the variable sortType equal to 'job_title' -->
-							<a href="#">Job Title</a>
+							<a href="#" ng-click="sortType = 'Job Title'">Job Title</a>
 						</td>
 						<td>
 							<!-- Add an ng-click event to set the variable sortType equal to 'salary' -->
-							<a href="#">Salary</a>
+							<a href="#" ng-click="sortType = 'Salary'">Salary</a>
 						</td>
 					</tr>
 				</thead>
