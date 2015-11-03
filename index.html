@@ -42,15 +42,15 @@
 						<td>
 
 							<!-- Add an ng-click event to set the variable sortType equal to 'name' -->
-							<a href="#" ng-click="sortType = 'Name'">Name</a>
+							<a href="#" ng-click="sortType = 'name'">Name</a>
 						</td>
 						<td>
 							<!-- Add an ng-click event to set the variable sortType equal to 'job_title' -->
-							<a href="#" ng-click="sortType = 'Job Title'">Job Title</a>
+							<a href="#" ng-click="sortType = 'job_title'">Job Title</a>
 						</td>
 						<td>
 							<!-- Add an ng-click event to set the variable sortType equal to 'salary' -->
-							<a href="#" ng-click="sortType = 'Salary'">Salary</a>
+							<a href="#" ng-click="sortType = 'salary'">Salary</a>
 						</td>
 					</tr>
 				</thead>
@@ -61,7 +61,11 @@
 						
 						<!-- Create 3 <td> elements to display name, job_title, and salary -->
 						
-
+					<tr ng-repeat="person in data | orderBy: sortType | filter: search">
+						<td>{{person.name}}</td>
+						<td>{{person.job_title}}</td>
+						<td>{{person.salary | currency}}</td>
+					</tr>
 
 				</tbody>
 			</table>
@@ -69,3 +73,12 @@
 
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
